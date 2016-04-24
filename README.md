@@ -8,7 +8,7 @@ Because season 6 is coming out, and I can't find anything like it out there.
 ## APIs
 
 ### GET /quotes
-Returns an array with one quote:
+**Returns an array with one quote and a character:**
 ```
 {
     "quote":"It's not easy being drink all the time. If it were easy, everyone would do it.",
@@ -20,11 +20,12 @@ Returns an array with one quote:
 
 Accepts any combination of characters. If result is invalid, it redirects to the API root.
 
-Sample:
+**Sample:**
 ```
 https://got-quotes.herokuapp.com/quotes?char=teryion
 ```
-Current Characters:
+**Current Characters:**
+
 | Character Name                           | Suggested Search Parameter   |
 | :---                                     | :---                         |
 | Bronn                                    | bronn                        |
