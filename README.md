@@ -22,7 +22,7 @@ Accepts any combination of characters. If result is invalid, it redirects to the
 
 **Sample:**
 ```
-https://got-quotes.herokuapp.com/quotes?char=teryion
+https://got-quotes.herokuapp.com/quotes?char=tyrion
 ```
 **Current Characters:**
 
