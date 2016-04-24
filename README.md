@@ -26,7 +26,7 @@ https://got-quotes.herokuapp.com/quotes?char=teryion
 ```
 Current Characters:
 | Character Name                           | Suggested Search Parameter   |
-| ---------------------------------------- | ---------------------------- |
+| :---                                     | :---                         |
 | Bronn                                    | bronn                        |
 | Brynden Tully                            | brynden                      |
 | Cersei                                   | cersei                       |
