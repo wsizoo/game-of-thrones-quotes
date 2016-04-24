@@ -1,37 +1,32 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show]
-  # respond_to :json
 
   # GET /quotes
   # GET /quotes.json
   def index
-    @quote = Quote.offset(rand(Quote.count)).first
-    @quote_output = []
-    @quote_output << @quote.quote << @quote.character
+    @character = params[:char]
+    if @character.nil?
+      @quote = Quote.offset(rand(Quote.count)).first
+    else
+      @quotes = Quote.where("lower(character) like ?", "%#{@character.downcase}%")
+      @quote = @quotes.offset(rand(@quotes.count)).first
+    end
+    if @quote.nil?
+      redirect_to quotes_path
+    else
+      @quote_output = []
+      @quote_output << @quote.quote << @quote.character
+    end
   end
 
-  # def create
-  #   @quote = Quote.new(quote_params)
-  #
-  #   respond_to do |format|
-  #     if @quote.save
-  #       format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
-  #       format.json { render :show, status: :created, location: @quote }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @quote.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_quote
-      @quote = Quote.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_quote
+    @quote = Quote.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def quote_params
-      params.fetch(:quote, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def quote_params
+    params.fetch(:quote, {})
+  end
 end
