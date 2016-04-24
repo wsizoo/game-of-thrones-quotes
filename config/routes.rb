@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'quotes#index'
+  root 'info#index'
+  resources :info
   resources :quotes, :defaults => { :format => :json }
 end
