@@ -1,0 +1,1 @@
+json.extract! @quote, :quote, :character
