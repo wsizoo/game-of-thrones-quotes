@@ -11,7 +11,7 @@ Because season 6 is coming out, and I can't find anything like it out there.
 **Returns an array with one quote and a character:**
 ```
 {
-    "quote":"It's not easy being drink all the time. If it were easy, everyone would do it.",
+    "quote":"It's not easy being drunk all the time. If it were easy, everyone would do it.",
     "character":"Tyrion"
 }
 ```
